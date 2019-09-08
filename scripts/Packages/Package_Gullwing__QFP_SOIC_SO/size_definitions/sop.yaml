@@ -80,7 +80,7 @@ SOP-8_3.76x4.96mm_P1.27mm:
   num_pins_y: 4
 
 SOP-8_3.9x4.9mm_P1.27mm:
-  size_source: 'http://www.macronix.com/Lists/Datasheet/Attachments/7534/MX25R3235F,%20Wide%20Range,%2032Mb,%20v1.6.pdf'
+  size_source: 'http://www.macronix.com/Lists/Datasheet/Attachments/7534/MX25R3235F,%20Wide%20Range,%2032Mb,%20v1.6.pdf#page=79'
   body_size_x:
     minimum: 3.80
     maximum: 4.00
@@ -88,6 +88,7 @@ SOP-8_3.9x4.9mm_P1.27mm:
     minimum: 4.77
     maximum: 5.03
   overall_height:
+    minimum: 1.45
     maximum: 1.75
   overall_size_x:
     minimum: 5.80
@@ -103,7 +104,7 @@ SOP-8_3.9x4.9mm_P1.27mm:
   num_pins_y: 4
 
 SOP-8_5.28x5.23mm_P1.27mm:
-  size_source: 'http://www.macronix.com/Lists/Datasheet/Attachments/7534/MX25R3235F,%20Wide%20Range,%2032Mb,%20v1.6.pdf'
+  size_source: 'http://www.macronix.com/Lists/Datasheet/Attachments/7534/MX25R3235F,%20Wide%20Range,%2032Mb,%20v1.6.pdf#page=80'
   body_size_x:
     minimum: 5.18
     maximum: 5.38
@@ -111,6 +112,7 @@ SOP-8_5.28x5.23mm_P1.27mm:
     minimum: 5.13
     maximum: 5.33
   overall_height:
+    minimum: 1.75
     maximum: 2.16
   overall_size_x:
     minimum: 7.70
