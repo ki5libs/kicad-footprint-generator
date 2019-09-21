@@ -88,7 +88,7 @@ SOP-8_3.9x4.9mm_P1.27mm:
     minimum: 4.77
     maximum: 5.03
   overall_height:
-    minimum: 1.45	#not specified, min.A1(0.10) + min.A2(1.35) gives this value 
+    minimum: 1.45 # not specified, min.A1(0.10) + min.A2(1.35) gives this value 
     maximum: 1.75 
   overall_size_x:
     minimum: 5.80
