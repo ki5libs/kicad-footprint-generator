@@ -58,7 +58,7 @@ def generate_one_footprint(partnumber, pincount, configuration):
 
     # calculate working values
     pitch = 0.5
-    pad_y = -1.8
+    pad_y = -1.35
     pad_width = 0.3
     pad_height = 1.1
     pad_x_span = pitch * (pincount - 1)
