@@ -75,6 +75,8 @@ def generate_one_footprint(partnumber, pincount, configuration):
     half_actuator_width = pad_x_span / 2.0 + 2.965
     ear_height = 4.4 - 2.8
 
+    pcb_edge_gap = 0.6
+
     body_edge = {
         'left': -half_body_width,
         'right': half_body_width,
@@ -141,10 +143,16 @@ def generate_one_footprint(partnumber, pincount, configuration):
     # create silkscreen outline
     kicad_mod.append(PolygoneLine(
         polygone=[
-            [half_actuator_width+nudge, actuator_y1-ear_height-nudge],
-            [half_actuator_width+nudge, actuator_y1+nudge],
-            [-half_actuator_width-nudge, actuator_y1+nudge],
-            [-half_actuator_width-nudge, actuator_y1-ear_height-nudge]],
+            [-half_actuator_width, actuator_y1-nudge-ear_height],
+            [-half_actuator_width-nudge, actuator_y1-nudge-ear_height],
+            [-half_actuator_width-nudge, actuator_y1-ear_height+pcb_edge_gap-nudge]],
+        layer='F.SilkS', width=configuration['silk_line_width']))
+
+    kicad_mod.append(PolygoneLine(
+        polygone=[
+            [half_actuator_width, actuator_y1-nudge-ear_height],
+            [half_actuator_width+nudge, actuator_y1-nudge-ear_height],
+            [half_actuator_width+nudge, actuator_y1-ear_height+pcb_edge_gap-nudge]],
         layer='F.SilkS', width=configuration['silk_line_width']))
 
     # create silkscreen pin 1 marker
@@ -156,6 +164,13 @@ def generate_one_footprint(partnumber, pincount, configuration):
             [-pad1_x-0.2, body_y1+0.1]],
         layer='F.SilkS', width=configuration['silk_line_width']))
 
+    # create PCB edge
+    kicad_mod.append(PolygoneLine(
+        polygone=[
+            [half_actuator_width-nudge, actuator_y1-ear_height+pcb_edge_gap],
+            [-half_actuator_width+nudge, actuator_y1-ear_height+pcb_edge_gap]],
+        layer='Dwgs.User', width=configuration['fab_line_width']))
+
     # create courtyard
     kicad_mod.append(RectLine(start=[-courtyard_x, courtyard_y1], end=[courtyard_x, courtyard_y2],
         layer='F.CrtYd', width=configuration['courtyard_line_width']))
@@ -166,6 +181,9 @@ def generate_one_footprint(partnumber, pincount, configuration):
     ######################### Text Fields ###############################
     addTextFields(kicad_mod=kicad_mod, configuration=configuration, body_edges=body_edge,
         courtyard={'top':courtyard_y1, 'bottom':courtyard_y2}, fp_name=footprint_name, text_y_inside_position=[0, tab_y])
+
+    kicad_mod.append(Text(type='value', text='PCB Edge', 
+        at=[0,actuator_y1-(ear_height-pcb_edge_gap)/2.0], size=[0.5,0.5], layer='Dwgs.User', thickness=0.08, rotation=0))
 
     ##################### Output and 3d model ############################
     model3d_path_prefix = configuration.get('3d_model_prefix','${KISYS3DMOD}/')
