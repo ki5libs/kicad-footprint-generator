@@ -19,6 +19,9 @@ from footprint_scripts_crystals import *
 
 
 if __name__ == '__main__':
+    cwd= os.getcwd()
+    os.mkdir("Crystal.pretty")
+    os.chdir("Crystal.pretty")
     standardtags="SMD SMT crystal"
     standardtagsres="SMD SMT ceramic resonator filter"
     # common settings
@@ -412,7 +415,4 @@ if __name__ == '__main__':
                               description="SMD Resomator/Filter Murata CDSCB, http://cdn-reichelt.de/documents/datenblatt/B400/SFECV-107.pdf",
                               tags=standardtagsres + " filter",
                               lib_name="Crystals", offset3d=[0, 0, 0], scale3d=[1, 1, 1], rotate3d=[0, 0, 0])
-
-
-
-
+    os.chdir(cwd)
