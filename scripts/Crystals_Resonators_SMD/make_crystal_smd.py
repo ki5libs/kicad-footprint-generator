@@ -415,4 +415,9 @@ if __name__ == '__main__':
                               description="SMD Resomator/Filter Murata CDSCB, http://cdn-reichelt.de/documents/datenblatt/B400/SFECV-107.pdf",
                               tags=standardtagsres + " filter",
                               lib_name="Crystals", offset3d=[0, 0, 0], scale3d=[1, 1, 1], rotate3d=[0, 0, 0])
+    makeSMDCrystalAndHand(footprint_name="Crystal_SMD_Diodes_FL", addSizeFootprintName=True, pins=4, pad_sep_x=2.1, pad_sep_y=1.6, pad=[1.5, 1.2], pack_width=3.2,
+                   pack_height=2.5, pack_bevel=0.1,
+                   description="crystal Diodes Pericom FL series https://www.diodes.com/assets/Datasheets/FL.pdf",
+                   tags=standardtags + "",
+                   lib_name="Crystals", offset3d=[0, 0, 0], scale3d=[1,1,1], rotate3d=[0, 0, 0])
     os.chdir(cwd)
