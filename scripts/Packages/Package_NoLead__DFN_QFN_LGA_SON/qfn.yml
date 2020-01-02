@@ -166,7 +166,7 @@ QFN-56-1EP_8x8mm_P0.5mm_EP4.3x4.3mm:
   pitch: 0.5
   n_horz_pads: 14
   n_vert_pads: 14
-  pad_width: 0.69
+  pad_width: 0.70
   pad_height: 0.28
   pad_h_distance: 7.68
   pad_v_distance: 7.68
