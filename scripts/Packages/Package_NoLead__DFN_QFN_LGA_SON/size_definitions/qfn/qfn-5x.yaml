@@ -134,7 +134,7 @@ QFN-56-1EP_8x8mm_P0.5mm_EP4.3x4.3mm:
     maximum: 1.00
 
   lead_width:
-    minimum: 0.18
+    minimum: 0.15 #according to Note 2 on page 40 (table min. value is 0.18 mm)
     nominal: 0.25
     maximum: 0.30
   lead_len:
